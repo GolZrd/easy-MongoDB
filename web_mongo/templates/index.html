@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Clients DB</title>
+    </head>
+    <body>
+        <h2>Список клиентов</h2>
+        <p><a href="/create">Добавить</a></p>
+        <table>
+            <thead><th>ID</th><th>First name</th><th>Email</th><th>Age</th></thead>
+            {{range . }}
+            <tr>
+                <td>{{.ID}}</td>
+                <td>{{.Name}}</td>
+                <td>{{.Email}}</td>
+                <td>{{.Age}}</td>
+                <td><form action="/edit/{{.ID}}" method="GET"><button type="submit">Изменить</button></form>
+                    <form action="/delete/{{.ID}}" method="POST"> <button type="submit">Удалить</button></form></td>
+            </tr>
+            {{end}}
+        </table>
+    </body>
+</html>

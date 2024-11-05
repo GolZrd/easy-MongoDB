@@ -1,0 +1,1 @@
+Простой CRUD проект используя fiber + mongoDB
